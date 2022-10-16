@@ -1,0 +1,15 @@
+{layout === "dashboard" && (
+<>
+    <Sidenav color={sidenavColor} brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
+        brandName="FMP Technologies" routes={routes} onMouseEnter={handleOnMouseEnter}
+        onMouseLeave={handleOnMouseLeave} />
+    <Configurator />
+    {configsButton}
+</>
+)}
+{layout === "vr" &&
+<Configurator />}
+<Routes>
+    {getRoutes(routes)}
+    <Route path="*" element={<Navigate to="/dashboard" />} />
+</Routes>
