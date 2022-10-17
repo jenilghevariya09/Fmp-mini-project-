@@ -28,7 +28,7 @@ import CsvDownload from 'react-json-to-csv'
 
 
 
-const fileName = 'Ledger spredsheet'  
+const fileName = 'Ledger spreadsheet'  
 const exportType = 'xls'  
 
 
@@ -100,7 +100,7 @@ const Ledger = (noGutter) => {
   const columns = [
     {
       field: "id",
-      headerName: "Transection ID",
+      headerName: "Transaction ID",
       width: 150,
       headerAlign: "center",
       renderCell: (cellValues) => {
@@ -125,7 +125,7 @@ const Ledger = (noGutter) => {
     },
     {
       field: "Coustmer_name",
-      headerName: "Coustmer Name",
+      headerName: "Customer Name",
       width: 150,
       headerAlign: "center",
       renderCell: (cellValues) => {
@@ -277,12 +277,15 @@ const ExportToExcel = () => {
                     <div className="d-flex justify-content-between align-items-center" >
                       <div className="" >Digital Ledger</div>
                       <div className="" style={{float: 'right'}} >
-                      <MDButton onClick={changeFileStatus} type="button" className="btn btn-primary " style={{marginRight: '15px'}} variant="gradient" color="light">{isActive?"Cancel":"Add File"}</MDButton>
+                      <MDButton onClick={changeFileStatus} type="button" className="btn btn-primary " style={{marginRight: '15px'}} variant="gradient" color="light">{isActive?"Cancel":"Upload File"}</MDButton>
 
 
-                      <MDButton type="button" className="btn btn-primary " style={{marginRight: '15px'}} variant="gradient" color="light" data-bs-toggle="modal" data-bs-target="#exampleModal" >Upload Ledger</MDButton>
+                      <MDButton type="button" className="btn btn-primary " style={{marginRight: '15px'}} variant="gradient" color="light" data-bs-toggle="modal" data-bs-target="#exampleModal" >Add Ledger</MDButton>
                       </div>
-                    </div>{isActive && <DropzoneArea dropzoneText='Drag and drop a file here or click to browse from your device' dropzoneClass='dropzoneBody' dropzoneParagraphClass="dropzone-text"/> || <MDButton type="button" className="btn btn-primary " style={{marginRight: '15px'}} variant="gradient" color="light" data-bs-toggle="modal" data-bs-target="#exampleModal" >Upload Ledger</MDButton>}
+                    </div>{isActive && <DropzoneArea dropzoneText='Drag and drop a file here or click to browse from your device' dropzoneClass='dropzoneBody' dropzoneParagraphClass="dropzone-text"/>}
+                    {isActive && <MDButton type="button" className="btn btn-primary " style={{marginTop: '15px'}} variant="gradient" color="light" >Save</MDButton>}
+
+                    
                     <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div className="modal-dialog">
                         <div className="modal-content">
@@ -329,7 +332,7 @@ const ExportToExcel = () => {
                             </form>
                             <MDBox mt={3} mb={1}>
                               <MDButton variant="gradient" onClick={handleOnSave} color="info" data-bs-dismiss="modal" fullWidth>
-                                Upload Ledger
+                                Add Ledger
                               </MDButton>
                             </MDBox>
                           </div>
@@ -343,7 +346,7 @@ const ExportToExcel = () => {
                 </MDButton>
       
                
-                <MDButton  type="button" className="btn btn-primary " variant="gradient" color="info" style={{marginRight: '15px'}} onClick={ExportToExcel} ><Icon fontSize="small"  onClick={ExportToExcel} sx={{ cursor: "pointer" }}>grid_on</Icon>&nbsp; Spredsheet
+                <MDButton  type="button" className="btn btn-primary " variant="gradient" color="info" style={{marginRight: '15px'}} onClick={ExportToExcel} ><Icon fontSize="small"  onClick={ExportToExcel} sx={{ cursor: "pointer" }}>grid_on</Icon>&nbsp; spreadsheet
                 </MDButton>
 
      
