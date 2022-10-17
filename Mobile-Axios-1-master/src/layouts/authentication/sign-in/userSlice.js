@@ -16,7 +16,7 @@ export const userSlice = createSlice({
             localStorage.clear();
             removeAuthToken()
             // eslint-disable-next-line no-restricted-globals
-            location.href="/login";
+            location.href="/adminlogin";
 
         }
     }
