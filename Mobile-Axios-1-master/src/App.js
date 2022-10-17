@@ -37,7 +37,6 @@ import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "co
 // Images
 import brandWhite from "assets/images/logo-ct.png";
 import brandDark from "assets/images/logo-ct-dark.png";
-// import SignIn from "layouts/authentication/sign-in";
 import PrivateRoute from "layouts/authentication/GuardedRoute";
 import Dashboard from "layouts/dashboard";
 import Stock from "layouts/stock";
@@ -160,7 +159,6 @@ export default function App() {
           <Route path='/branches' element={<Branches />} />
           <Route path="/reports" element={<Reports />} />
         </Route>
-        {/* <Route path="/login" element={<SignIn />} /> */}
         <Route path="/adminlogin" element={<AdminLogin />} />
 
       </Routes>
