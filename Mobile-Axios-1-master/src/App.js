@@ -45,10 +45,11 @@ import Branches from "layouts/branches";
 import Reports from "layouts/reports";
 import Ledger from "layouts/mobile";
 import AdminLogin from "layouts/authentication/sign-in/adminLogin";
+import PlatformSettings from "layouts/profile/components/PlatformSettings";
+import UserProfile from "layouts/userProfile";
 // import Table from "layouts/table/Table";
 
 export default function App() {
-
 
   const [controller, dispatch] = useMaterialUIController();
 
@@ -158,6 +159,7 @@ export default function App() {
           <Route path="/stock-transfer" element={<StockTransfer />} />
           <Route path='/branches' element={<Branches />} />
           <Route path="/reports" element={<Reports />} />
+          <Route path="/profile" element={<UserProfile />} />
         </Route>
         <Route path="/adminlogin" element={<AdminLogin />} />
 

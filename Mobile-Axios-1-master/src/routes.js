@@ -90,6 +90,7 @@ const routes = [
     route: "/reports",
     component: <Reports />,
   },
+
   // {
   //   type: "collapse",
   //   name: "Table",
