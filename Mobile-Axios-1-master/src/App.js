@@ -37,7 +37,6 @@ import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "co
 // Images
 import brandWhite from "assets/images/logo-ct.png";
 import brandDark from "assets/images/logo-ct-dark.png";
-// import SignIn from "layouts/authentication/sign-in";
 import PrivateRoute from "layouts/authentication/GuardedRoute";
 import Dashboard from "layouts/dashboard";
 import Stock from "layouts/stock";
@@ -46,10 +45,10 @@ import Branches from "layouts/branches";
 import Reports from "layouts/reports";
 import Ledger from "layouts/mobile";
 import AdminLogin from "layouts/authentication/sign-in/adminLogin";
+import UserProfile from "layouts/userProfile";
 // import Table from "layouts/table/Table";
 
 export default function App() {
-
 
   const [controller, dispatch] = useMaterialUIController();
 
@@ -159,8 +158,8 @@ export default function App() {
           <Route path="/stock-transfer" element={<StockTransfer />} />
           <Route path='/branches' element={<Branches />} />
           <Route path="/reports" element={<Reports />} />
+          <Route path="/profile" element={<UserProfile />} />
         </Route>
-        {/* <Route path="/login" element={<SignIn />} /> */}
         <Route path="/adminlogin" element={<AdminLogin />} />
 
       </Routes>

@@ -15,8 +15,8 @@ import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import CsvDownload from 'react-json-to-csv'
 
-//Spredsheet file name and export type
-const fileName = 'Ledger spredsheet'  
+//spreadsheet file name and export type
+const fileName = 'Ledger spreadsheet'  
 const exportType = 'xls'  
 
 function Invoice({ date, id, price, noGutter }) {
@@ -34,7 +34,7 @@ function Invoice({ date, id, price, noGutter }) {
   const columns = [
     {
       field: "id",
-      headerName: "Transection ID",
+      headerName: "Transaction ID",
       width: 150,
       headerAlign: "center",
       renderCell: (cellValues) => {
@@ -59,7 +59,7 @@ function Invoice({ date, id, price, noGutter }) {
     },
     {
       field: "Coustmer_name",
-      headerName: "Coustmer Name",
+      headerName: "Customer Name",
       width: 150,
       headerAlign: "center",
       renderCell: (cellValues) => {
@@ -165,7 +165,7 @@ function Invoice({ date, id, price, noGutter }) {
   
     pdf.save("pdf");
   };
- //Spredsheet convert
+ //spreadsheet convert
   const data = (mrpStock)  
 const ExportToExcel = () => {  
   exportFromJSON({ data, fileName, exportType })  
