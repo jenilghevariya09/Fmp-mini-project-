@@ -1,9 +1,12 @@
 import "../../App.css";
+import { DropzoneArea } from 'mui-file-dropzone';
 import { DataGrid } from "@mui/x-data-grid";
 import React, { useState, useEffect } from 'react'
 import {
+
   Card,
   Icon,
+
 } from "@mui/material";
 import { HttpClient } from "../../utility/httpclient";
 import Footer from "examples/Footer";
@@ -33,6 +36,12 @@ const exportType = 'xls'
 const Ledger = (noGutter) => {
   const [mrpStock, setMrpStock] = useState([]);
   const [activeStock, setActiveStock] = useState({});
+
+  const [isActive, setIsActive] = React.useState(false)
+ 
+  function changeFileStatus() {
+    setIsActive(prevState => !prevState)
+} 
 
   // Get Data
   const getData = () => {
@@ -268,11 +277,12 @@ const ExportToExcel = () => {
                     <div className="d-flex justify-content-between align-items-center" >
                       <div className="" >Digital Ledger</div>
                       <div className="" style={{float: 'right'}} >
+                      <MDButton onClick={changeFileStatus} type="button" className="btn btn-primary " style={{marginRight: '15px'}} variant="gradient" color="light">{isActive?"Cancel":"Add File"}</MDButton>
 
 
-                      <MDButton type="button" className="btn btn-primary " style={{float: 'right' }} variant="gradient" color="light" data-bs-toggle="modal" data-bs-target="#exampleModal" >Upload Ledger</MDButton>
+                      <MDButton type="button" className="btn btn-primary " style={{marginRight: '15px'}} variant="gradient" color="light" data-bs-toggle="modal" data-bs-target="#exampleModal" >Upload Ledger</MDButton>
                       </div>
-                    </div>
+                    </div>{isActive && <DropzoneArea dropzoneText='Drag and drop a file here or click to browse from your device' dropzoneClass='dropzoneBody' dropzoneParagraphClass="dropzone-text"/> || <MDButton type="button" className="btn btn-primary " style={{marginRight: '15px'}} variant="gradient" color="light" data-bs-toggle="modal" data-bs-target="#exampleModal" >Upload Ledger</MDButton>}
                     <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div className="modal-dialog">
                         <div className="modal-content">

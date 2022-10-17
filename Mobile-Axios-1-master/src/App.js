@@ -45,7 +45,6 @@ import Branches from "layouts/branches";
 import Reports from "layouts/reports";
 import Ledger from "layouts/mobile";
 import AdminLogin from "layouts/authentication/sign-in/adminLogin";
-import PlatformSettings from "layouts/profile/components/PlatformSettings";
 import UserProfile from "layouts/userProfile";
 // import Table from "layouts/table/Table";
 
