@@ -39,15 +39,18 @@ class UserCards extends Component {
   componentDidMount() {
     this.loadData();
   }
+  
+
 
   render() {
     return (
-       
-      <div className="clearfix">
-        <div className="row">
+        <>
+
+      <div className="clearfix ">
+        <div className="row ">
           {this.state.data.map(data => (
             
-            <div className="col-md-4 animated fadeIn" key={data.id.value}>
+            <div className="col-md-4 my-4 mx-auto animated fadeIn" key={data.id.value}>
               <div className="card">
                 <div className="card-body">
                   <div className="avatar">
@@ -76,7 +79,7 @@ class UserCards extends Component {
           ))}
         </div>
         <button
-          className="btn btn-light btn-block w-50 mx-auto"
+          className="btn btn-light btn-block w-40 mx-auto my-3 "
           onClick={e => {
             this.loadMore();
           }}
@@ -84,7 +87,7 @@ class UserCards extends Component {
           Load More Users
         </button>
       </div>
-  
+     </>
     );
   }
 }
